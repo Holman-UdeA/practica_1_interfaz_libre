@@ -15,89 +15,86 @@ class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Center(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Image(
-                  image: AssetImage("assets/images/Logo.png"),
-                  width: 200,
-                  height: 200,
-                ),
-                const SizedBox(height: 16),
-                TextFormField(
-                  controller: _email,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    prefixIcon: Icon(Icons.contact_mail),
-                    labelText: "Correo electrónico",
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Center(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Image(
+                    image: AssetImage("assets/images/Logo.png"),
+                    width: 200,
+                    height: 200,
                   ),
-                  keyboardType: TextInputType.emailAddress,
-                ),
-                const SizedBox(height: 16),
-                TextFormField(
-                  controller: _password,
-                  obscureText: _obscurePassword,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    prefixIcon: Icon(Icons.password_rounded),
-                    suffixIcon: IconButton(
-                      onPressed: () {
-                        setState(() {
-                          _obscurePassword = !_obscurePassword;
-                        });
-                      },
-                      icon: Icon(
-                        _obscurePassword
-                            ? Icons.visibility_off
-                            : Icons.visibility,
+                  const SizedBox(height: 16),
+                  TextFormField(
+                    controller: _email,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      prefixIcon: Icon(Icons.contact_mail),
+                      labelText: "Correo electrónico",
+                    ),
+                    keyboardType: TextInputType.emailAddress,
+                  ),
+                  const SizedBox(height: 16),
+                  TextFormField(
+                    controller: _password,
+                    obscureText: _obscurePassword,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      prefixIcon: Icon(Icons.password_rounded),
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            _obscurePassword = !_obscurePassword;
+                          });
+                        },
+                        icon: Icon(
+                          _obscurePassword
+                              ? Icons.visibility_off
+                              : Icons.visibility,
+                        ),
                       ),
+                      labelText: "Contraseña",
                     ),
-                    labelText: "Contraseña",
+                    keyboardType: TextInputType.visiblePassword,
                   ),
-                  keyboardType: TextInputType.visiblePassword,
-                ),
-                const SizedBox(height: 40),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.white,
-                    backgroundColor: Color(0xFF0F8555),
-                    fixedSize: const Size(200, 50),
-                    textStyle: const TextStyle(
-                      fontSize: 20
-                    )
-                  ),
-                  onPressed: () {},
-                  child: const Text("Iniciar sesión"),
-                ),
-                const SizedBox(height: 40),
-                TextButton(
-                  style: TextButton.styleFrom(
-                    foregroundColor: Color(0xFF0F8555),
-                    textStyle: const TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
+                  const SizedBox(height: 30),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: Color(0xFF0F8555),
+                      fixedSize: const Size(400, 60),
+                      textStyle: const TextStyle(fontSize: 20),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)
+                      )
                     ),
+                    onPressed: () {},
+                    child: const Text("Iniciar sesión"),
                   ),
-                  onPressed: () {},
-                  child: const Text("¿Primera vez en SportLink? Registrate"),
-                ),
-                const SizedBox(height: 12),
-                TextButton(
-                  style: TextButton.styleFrom(
-                    foregroundColor: Color(0xFF0F8555),
-                    textStyle: const TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
+                  const SizedBox(height: 80),
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      foregroundColor: Color(0xFF0F8555).withOpacity(0.7),
+                      textStyle: const TextStyle(fontSize: 15),
                     ),
+                    onPressed: () {},
+                    child: const Text("¿Primera vez en SportLink? Registrate"),
                   ),
-                  onPressed: () {},
-                  child: Text("¿Olvidaste tu contraseña?"),
-                ),
-              ],
+                  const SizedBox(height: 12),
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      foregroundColor: Color(0xFF0F8555).withOpacity(0.7),
+                      textStyle: const TextStyle(fontSize: 15),
+                    ),
+                    onPressed: () {},
+                    child: Text("¿Olvidaste tu contraseña?"),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
