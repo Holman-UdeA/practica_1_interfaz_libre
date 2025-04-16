@@ -78,7 +78,7 @@ class _SignInPageState extends State<SignInPage> {
                   const SizedBox(height: 80),
                   TextButton(
                     style: TextButton.styleFrom(
-                      foregroundColor: Color(0xFF0F8555).withOpacity(0.7),
+                      foregroundColor: Color(0xFF0F8555).withValues(alpha:0.7),
                       textStyle: const TextStyle(fontSize: 15),
                     ),
                     onPressed: () {},
@@ -87,7 +87,7 @@ class _SignInPageState extends State<SignInPage> {
                   const SizedBox(height: 12),
                   TextButton(
                     style: TextButton.styleFrom(
-                      foregroundColor: Color(0xFF0F8555).withOpacity(0.7),
+                      foregroundColor: Color(0xFF0F8555).withValues(alpha: 0.7),
                       textStyle: const TextStyle(fontSize: 15),
                     ),
                     onPressed: () {},
